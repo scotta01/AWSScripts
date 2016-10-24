@@ -21,8 +21,8 @@ process{
 
     $vhost = Get-Content $Target/vhost.conf
     $vhost = $vhost.Replace($URLTemplate,$URL)
-    $vhost = $vhost.Replace($ExtURLTemplate,$ExtURL) | Set-Content $Target/vhost.conf
-    $vhost = $vhost.Replace($Template,$Target) | Set-Content $Target/vhost.conf
+    $vhost = $vhost.Replace($ExtURLTemplate,$ExtURL) 
+    $vhost = $vhost.Replace($Template,$Target)
     $vhost | Set-Content $Target/vhost.conf
 
     copy-item $Target/vhost.conf $SitesAvailable$DCSF.conf
