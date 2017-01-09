@@ -15,7 +15,7 @@ if (@($zoneEntry).count -eq 1) {
 
 
     $change = New-Object Amazon.Route53.Model.Change
-    $change.Action = "CREATE"
+    $change.Action = "UPSERT"
     $change.ResourceRecordSet = New-Object Amazon.Route53.Model.ResourceRecordSet
     $change.ResourceRecordSet.Name = $DNSName
     $change.ResourceRecordSet.Type = $RecordType
